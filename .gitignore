@@ -1,0 +1,9 @@
+.vscode
+.env
+node_modules
+dist
+*.bot.yaml
+bot.build.yaml
+bot.release.yaml
+bot.deployment-log.txt
+trainfile.json

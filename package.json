@@ -1,0 +1,74 @@
+{
+  "name": "@bahasa-ai/bot-framework",
+  "version": "1.0.1",
+  "description": "bahasa.ai middleware framework",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve.docker": "node dist/index.js",
+    "serve.dev": "nodemon dist/index.js --watch",
+    "build.dev": "./node_modules/.bin/rimraf dist && node ./node_modules/eslint/bin/eslint.js -c .eslintrc.js --ext .ts . --fix && ./node_modules/.bin/tsc -w",
+    "build.prod": "./node_modules/.bin/rimraf dist && node ./node_modules/eslint/bin/eslint.js -c .eslintrc.js --ext .ts . --fix && ./node_modules/.bin/tsc",
+    "deploy.bot.clean": "./node_modules/.bin/rimraf dist && node ./node_modules/eslint/bin/eslint.js -c .eslintrc.js --ext .ts . --fix && ./node_modules/.bin/tsc && node dist/DeployBot/index.js",
+    "deploy.bot": "node dist/DeployBot/index.js",
+    "package.version": "echo $npm_package_version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahasa-ai/bot-framework.git"
+  },
+  "author": "Fathur<fathur@bahasa.ai>",
+  "license": "ISC",
+  "homepage": "https://github.com/bahasa-ai/bot-framework.git",
+  "nodemonConfig": {
+    "ignore": [
+      "data/json/*.json"
+    ]
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/axios": "^0.14.0",
+    "@types/bluebird": "^3.5.32",
+    "@types/cors": "^2.8.12",
+    "@types/inquirer": "^6.5.0",
+    "@types/js-yaml": "^3.12.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^12.12.42",
+    "@types/redis": "^2.8.25",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "dotenv": "^8.0.0",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.4",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "@bahasa-ai/articuno-js": "^1.1.2",
+    "@bahasa-ai/copywriter": "^0.1.3",
+    "@bahasa-ai/engine-database": "0.0.42",
+    "@bahasa-ai/plugins-botbuilder": "^0.1.7",
+    "@bahasa-ai/plugins-core-engine": "^0.3.4",
+    "@bahasa-ai/plugins-request": "0.0.30",
+    "@sentry/node": "^5.24.2",
+    "aws-param-store": "^3.2.0",
+    "aws-sdk": "^2.686.0",
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.18.3",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "elastic-apm-node": "^3.6.1",
+    "inquirer": "^7.0.0",
+    "inversify": "^5.0.1",
+    "js-yaml": "^3.13.1",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.9.1",
+    "node-file-cache": "^1.0.2",
+    "redis": "^3.1.2",
+    "reflect-metadata": "^0.1.13",
+    "require.all": "^2.0.4",
+    "source-map-support": "^0.5.19"
+  }
+}
